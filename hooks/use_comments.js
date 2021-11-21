@@ -1,4 +1,5 @@
 var faker = require('faker');
+var uuid = require('uuid');
 
 function useComments() {
   var comments = [];
@@ -7,7 +8,8 @@ function useComments() {
     var comment = {
       name: faker.name.findName(),
       content: faker.lorem.paragraph(),
-      date: faker.date.past()
+      date: faker.date.past(),
+      token: uuid.v4()
     };
     comments = [
       ...comments,
